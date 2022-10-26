@@ -95,7 +95,7 @@ public class School {
 		List<String> schoolList = new ArrayList<>();
 		List<String> listDuplicateEmail = new ArrayList<>();
 
-		//declaring Veriables
+		//declaring Variables
 		String username;
 		String password;
 
@@ -214,7 +214,7 @@ public class School {
 						break;
 
 					case 4:
-						System.out.println("___ ++++Report:++++___");// for each method in array list
+						System.out.println("_____ ++++++Report:++++++_____");// for each method in array list
 						for (String schoolVariable : schoolList) {
 							System.out.println(getSchoolName());
 							for (Student studentVariable : studentList) {
