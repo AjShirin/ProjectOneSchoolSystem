@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import java.util.*;
 
 public class School {
-int a =1;
+	int a = 1;
 	private static String schoolName;
 
 	static boolean isExitMain = true;
@@ -47,7 +47,6 @@ int a =1;
 		System.out.println("6. Coding problem ");
 		System.out.println("7. Currency Converotr To OMR ");
 		System.out.println("8. Exit the System");
-		
 
 	}
 
@@ -70,6 +69,7 @@ int a =1;
 
 	}
 
+	// Factorial function
 	public static BigInteger calculationOfFactorial(int n) {
 		BigInteger factorial = new BigInteger("1");
 		for (int i = 2; i < n; i++) {
@@ -95,6 +95,7 @@ int a =1;
 		List<String> schoolList = new ArrayList<>();
 		List<String> listDuplicateEmail = new ArrayList<>();
 
+		//declaring Veriables
 		String username;
 		String password;
 
@@ -188,27 +189,27 @@ int a =1;
 							historySatck.push(exitUserStudentInput);
 							if (exitStudentInput == 0) {
 								isExitMain = false;
-								//mainMenueFunction();
+								// mainMenueFunction();
 							}
-							
+
 						}
-						//mainMenueFunction();
+						// mainMenueFunction();
 						break;
 					case 2:
 						// Printing elements of HashSet object
 						System.out.println(hashEmailSetUnique);
-						//mainMenueFunction();
+						// mainMenueFunction();
 						break;
 
 					case 3:
 						for (String email : listDuplicateEmail) {
 							if (hashEmailSet.add(email) == false) {
 								System.out.println("The Deplicate email is: " + " " + email);
-								
+
 							}
-							
+
 						}
-						//mainMenueFunction();
+						// mainMenueFunction();
 
 						break;
 
@@ -223,13 +224,13 @@ int a =1;
 									for (Mark markVariable : subjectVariable.getMarksArryList()) {
 										System.out.println("Student mark of " + subjectVariable.getSubjectName() + ":"
 												+ " " + markVariable.getSubjectMark());
-										//System.out.println("\tStudent Fees Amount: " + amountCalulation + "OMR");
+										// System.out.println("\tStudent Fees Amount: " + amountCalulation + "OMR");
 
 									}
 								}
 							}
 						}
-						//mainMenueFunction();
+						// mainMenueFunction();
 
 						break;
 					case 5:
@@ -241,7 +242,7 @@ int a =1;
 						while (historySatck.empty() == false) {
 							System.out.println(historySatck.pop());
 						}
-						//mainMenueFunction();
+						// mainMenueFunction();
 						break;
 					case 6:
 
