@@ -1,10 +1,11 @@
 package Project1;
+//test
 
 import java.math.BigInteger;
 import java.util.*;
 
 public class School {
-
+int a =1;
 	private static String schoolName;
 
 	static boolean isExitMain = true;
