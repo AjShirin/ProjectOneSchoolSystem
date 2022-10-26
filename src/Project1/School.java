@@ -51,8 +51,10 @@ int a =1;
 
 	}
 
+	// Creating array to store the fibonacci value
 	private static long[] fibonacciArrayStore;
 
+	// Fibonacci function
 	private static long fibonacciFunction(int number) {
 		if (number <= 1) {
 			return number;
@@ -285,7 +287,7 @@ int a =1;
 								System.out.println("Enter The Fibonacci Number You Want To Find:");
 								int number = sc.nextInt();
 
-								fibonacciArrayStore = new long[number + 1]; // example to claulate 3 fibonnaci so index
+								fibonacciArrayStore = new long[number + 1]; // example to claculate 3 fibonnaci so index
 																			// should be 4
 								for (int i = 0; i <= number; i++) {
 									System.out.print(fibonacciFunction(i) + " ");
