@@ -47,6 +47,7 @@ int a =1;
 		System.out.println("6. Coding problem ");
 		System.out.println("7. Currency Converotr To OMR ");
 		System.out.println("8. Exit the System");
+		System.out.println("***************************");
 
 	}
 
