@@ -47,7 +47,7 @@ int a =1;
 		System.out.println("6. Coding problem ");
 		System.out.println("7. Currency Converotr To OMR ");
 		System.out.println("8. Exit the System");
-		System.out.println("***************************");
+		
 
 	}
 
@@ -58,7 +58,7 @@ int a =1;
 			return number;
 		}
 
-		if (fibonacciArrayStore[number] != 0) { // premitive can never be null
+		if (fibonacciArrayStore[number] != 0) { // Primitive variables can never be null
 			return fibonacciArrayStore[number];
 		}
 		long nthFibbonacciNumber = (fibonacciFunction(number - 1) + fibonacciFunction(number - 2));
