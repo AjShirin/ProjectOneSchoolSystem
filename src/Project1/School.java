@@ -324,7 +324,7 @@ int a =1;
 
 					case 7:
 						Map<String, Double> currencyMap = new HashMap<>();
-						Map<String, Map<String, Double>> comparisionMap = new HashMap<>();
+						Map<String, Map<String, Double>> secondCurrencyMap = new HashMap<>();
 
 						String currencyName = "Saudi Riyal";
 
@@ -379,12 +379,12 @@ int a =1;
 //				System.out.printf("%.2f", comparisionMap);
 
 						currencyMap.put(currencyName, amountCalulation);
-						comparisionMap.put(studentConversionName, currencyMap);
+						secondCurrencyMap.put(studentConversionName, currencyMap);
 //	    		System.out.println( currencyMap);
 
 						// find the closest int for these floats
 						// System.out.println(Math.round(comparisionMap));
-						System.out.println(comparisionMap);
+						System.out.println(secondCurrencyMap);
 						mainMenueFunction();
 
 						// String formattedString = String.format("%.2f", comparisionMap);
