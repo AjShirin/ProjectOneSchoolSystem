@@ -1,10 +1,14 @@
 package Project1;
-//test
+//import java package 
+import java.io.FilterOutputStream; 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.*;
 
 import java.math.BigInteger;
 import java.util.*;
 
-public class School {
+public class School  { // Implementing the Serializtion //implements Serializable
 	int a = 1;
 	private static String schoolName;
 
@@ -88,12 +92,28 @@ public class School {
 //	}
 
 	public static void main(String[] args) {
+		//using Stack and push data to file
+		 FileOutputStream fileOut;
+		 ObjectOutputStream fOut = null;
+		 try {
+			 fileOut = new FileOutputStream("C:\\Users\\user020\\Desktop\\TMain\\Solo_Project_School_System-M\\Seroutput.txt");
+			 fOut = new ObjectOutputStream(fileOut);
+			 
+		 }
+		 catch (IOException e1) {
+			 e1.printStackTrace();
+		 } // end of using stack and  push data into file
+		 
 		Scanner sc = new Scanner(System.in);
 		Stack<String> historySatck = new Stack<>();
 		Set<String> hashEmailSet = new HashSet<String>();
 		Set<String> hashEmailSetUnique = new HashSet<String>();
 		List<String> schoolList = new ArrayList<>();
 		List<String> listDuplicateEmail = new ArrayList<>();
+		
+		
+		 
+//       ObjectOutputStream out = new ObjectOutputStream(file);
 
 		//declaring Variables
 		String username;
@@ -103,6 +123,40 @@ public class School {
 		double feesAmount = 0;
 		double amountCalulation = 0;
 		double amount;
+		
+		 // Serialization 
+//        try
+//        {   
+//            //Saving of object in a file
+//            FileOutputStream file = new FileOutputStream("Serilaization.txt");
+//            ObjectOutputStream out = new ObjectOutputStream(file);
+//              
+//            // Method for serialization of object
+//            out.writeObject(historySatck);
+//              
+//            out.close();
+//            file.close();
+//              
+//            System.out.println("Object has been serialized");
+//  
+//        }
+//          
+//        catch(IOException ex)
+//        {
+//            System.out.println("IOException is caught" + ex);
+//        }
+//		try {
+//			FileOutputStream fileOut = new FileOutputStream ("SerilizationFile.txt");
+//			ObjectOutputStream out = new ObjectOutputStream (fileOut);
+//			out.writeObject(historySatck);
+//			out.flush();
+//			out.close();
+//			//System.out.println("congratz it has been added to the file !!");
+//		}
+//		catch (Exception e)
+//		{
+//			System.out.println(e);
+//		}
 
 		while (isExitLogiIN) {
 			System.out.print("Enter username:");// username:shirin
@@ -112,7 +166,7 @@ public class School {
 			if (username.equals("shirin") && password.equals("ajmi")) {
 				System.out.println("Horray!! Login Successful.. welcome To The Main Menue!");
 //				userPass=false;
-				mainMenueFunction();
+				//mainMenueFunction();
 
 //			userPass = false;
 
@@ -130,6 +184,21 @@ public class School {
 							historySatck.push(schoolInput);
 
 							schoolObject.setSchoolName(schoolInput);// object chaining
+							
+							
+//							try {
+//								FileOutputStream fileOut = new FileOutputStream ("SerilizationFile.txt");
+//								ObjectOutputStream out = new ObjectOutputStream (fileOut);
+//								out.writeObject(historySatck);
+//								out.flush();
+//								out.close();
+//								System.out.println("congratz it has been added to the file !!");
+//							}
+//							catch (Exception e)
+//							{
+//								System.out.println(e);
+//							}
+							
 
 							Student studentObject = new Student();// student object
 
@@ -187,6 +256,7 @@ public class School {
 							int exitStudentInput = sc.nextInt();
 							String exitUserStudentInput = Integer.toString(exitStudentInput);
 							historySatck.push(exitUserStudentInput);
+							
 							if (exitStudentInput == 0) {
 								isExitMain = false;
 								// mainMenueFunction();
@@ -241,9 +311,29 @@ public class School {
 						// no items; {@code false} otherwise.
 						while (historySatck.empty() == false) {
 							System.out.println(historySatck.pop());
+							try {
+								fOut.writeObject(historySatck.toString());
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						}
-						// mainMenueFunction();
+						
+						
+//						try {
+//						ObjectInputStream in = new ObjectInputStream (new FileInputStream("SerilizationFile.txt"));
+//						Stack stackVariableStream = (Stack)in.readObject();
+//						System.out.println(stackVariableStream);
+//						in.close();
+//						}
+//						catch (Exception e) {
+//							System.out.println(e);
+//						}
+						
+						 //mainMenueFunction();
+						 
 						break;
+						
 					case 6:
 
 						do {
