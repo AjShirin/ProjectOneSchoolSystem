@@ -11,7 +11,7 @@ import java.util.*;
 
 public class School  { // Implementing the Serializtion //implements Serializable
 	int a = 1;
-	private static String schoolName;
+	 static String schoolName;
 
 	static boolean isExitMain = true;
 	static boolean isExitSubject = true;
@@ -55,34 +55,34 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 
 	}
 
-	// Creating array to store the fibonacci value
-	private static long[] fibonacciArrayStore;
-
-	// Fibonacci function
-	private static long fibonacciFunction(int number) {
-		if (number <= 1) {
-			return number;
-		}
-
-		if (fibonacciArrayStore[number] != 0) { // Primitive variables can never be null
-			return fibonacciArrayStore[number];
-		}
-		long nthFibbonacciNumber = (fibonacciFunction(number - 1) + fibonacciFunction(number - 2));
-		fibonacciArrayStore[number] = nthFibbonacciNumber;
-
-		return nthFibbonacciNumber;
-
-	}
-
-	// Factorial function
-	public static BigInteger calculationOfFactorial(int n) {
-		BigInteger factorial = new BigInteger("1");
-		for (int i = 2; i < n; i++) {
-			factorial = factorial.multiply(BigInteger.valueOf(i));
-
-		}
-		return factorial;
-	}
+//	// Creating array to store the fibonacci value
+//	private static long[] fibonacciArrayStore;
+//
+//	// Fibonacci function
+//	private static long fibonacciFunction(int number) {
+//		if (number <= 1) {
+//			return number;
+//		}
+//
+//		if (fibonacciArrayStore[number] != 0) { // Primitive variables can never be null
+//			return fibonacciArrayStore[number];
+//		}
+//		long nthFibbonacciNumber = (fibonacciFunction(number - 1) + fibonacciFunction(number - 2));
+//		fibonacciArrayStore[number] = nthFibbonacciNumber;
+//
+//		return nthFibbonacciNumber;
+//
+//	}
+//
+//	// Factorial function
+//	public static BigInteger calculationOfFactorial(int n) {
+//		BigInteger factorial = new BigInteger("1");
+//		for (int i = 2; i < n; i++) {
+//			factorial = factorial.multiply(BigInteger.valueOf(i));
+//
+//		}
+//		return factorial;
+//	}
 //		if(n == 1) {
 //			System.out.println("factorial(" + n + ") = 1");
 //			return 1;
@@ -93,6 +93,7 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 //	}
 
 	public static void main(String[] args) {
+		History historyObject= new History();
 		
 		//using Stack and push data to file
 		 FileOutputStream fileOut;
@@ -127,10 +128,10 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 		String username;
 		String password;
 
-		int currency;
-		double feesAmount = 0;
-		double amountCalulation = 0;
-		double amount;
+//		int currency;
+//		double feesAmount = 0;
+//		double amountCalulation = 0;
+//		double amount;
 		
 		 // Serialization 
 //        try
@@ -207,148 +208,152 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 					int studentMenue = sc.nextInt();
 					switch (studentMenue) {
 					case 1:
-						isExitMain = Boolean.TRUE;
-						while (isExitMain) {
-							School schoolObject = new School(); // Creating object for school
-							System.out.println("Enter School Name: ");
-							String schoolInput = sc.next();
-							historySatck.push(schoolInput);
-
-							schoolObject.setSchoolName(schoolInput);// object chaining
-							
-							
-//							try {
-//								FileOutputStream fileOut = new FileOutputStream ("SerilizationFile.txt");
-//								ObjectOutputStream out = new ObjectOutputStream (fileOut);
-//								out.writeObject(historySatck);
-//								out.flush();
-//								out.close();
-//								System.out.println("congratz it has been added to the file !!");
-//							}
-//							catch (Exception e)
-//							{
-//								System.out.println(e);
-//							}
-	
-//							while(checkMark) {
-//								try {
-//							System.out.println("Enter Mark: ");
-//							String markInput = sc.next();
-//							Integer studentMarkInput = Integer.parseInt(markInput);
-//							checkMark=false;
+						Registeration registerationObject = new Registeration(); // Creating object for Registeration class
+						Registeration.registeration();
+						
+//						isExitMain = Boolean.TRUE;
+//						while (isExitMain) {
+//							School schoolObject = new School(); // Creating object for school
+//							System.out.println("Enter School Name: ");
+//							String schoolInput = sc.next();
+//							historyObject.historySatck.push(schoolInput);
+//
+//							schoolObject.setSchoolName(schoolInput);// object chaining
+//							
+//							
+////							try {
+////								FileOutputStream fileOut = new FileOutputStream ("SerilizationFile.txt");
+////								ObjectOutputStream out = new ObjectOutputStream (fileOut);
+////								out.writeObject(historySatck);
+////								out.flush();
+////								out.close();
+////								System.out.println("congratz it has been added to the file !!");
+////							}
+////							catch (Exception e)
+////							{
+////								System.out.println(e);
+////							}
+//	
+////							while(checkMark) {
+////								try {
+////							System.out.println("Enter Mark: ");
+////							String markInput = sc.next();
+////							Integer studentMarkInput = Integer.parseInt(markInput);
+////							checkMark=false;
+////							
+////
+////							markObject.setSubjectMark(studentMarkInput);
+////							historySatck.push(markInput);
+////							schoolList.add(schoolInput);
+////							
+////							subjectObject.marksArryList.add(markObject);
+////							checkMark= false;
+////								}
+////								catch(Exception e) {
+////									System.out.println("The Error is " + e.getMessage());
+////									continue;
+////								} 
+////							}
+//
+//							Student studentObject = new Student();// student object
+//							
+//							boolean studentID = true;
+//
+//							System.out.println("Enter Student ID:");
+//							int enrolNumber = sc.nextInt();
+//							String enrolmentNumber = Integer.toString(enrolNumber);
+//							
+//							historyObject.historySatck.push(enrolmentNumber);
+//							studentObject.setEnrolID(enrolNumber);
+//
+//							System.out.println("Enter Student Name:");
+//							String studentNameInput = sc.next();
+//							historyObject.historySatck.push(studentNameInput);
+//							studentObject.setstudentName(studentNameInput);
+//							schoolObject.studentList.add(studentObject);
+//							studentObject.isWorking(); // taking from the student interface
+//							
+////							System.out.println("Enter Student last name:");
+////							String studentLastName = sc.next();
+////							historySatck.push(studentLastName);
+////							studentObject.last
+//							
 //							
 //
-//							markObject.setSubjectMark(studentMarkInput);
-//							historySatck.push(markInput);
-//							schoolList.add(schoolInput);
-//							
-//							subjectObject.marksArryList.add(markObject);
-//							checkMark= false;
+//							System.out.println("Enter Student Email:");
+//							String emailInput = sc.next();
+//							historyObject.historySatck.push(emailInput);
+//							studentObject.setStudentEmail(emailInput);
+//							schoolObject.studentList.add(studentObject);
+//							listDuplicateEmail.add(emailInput);
+//							hashEmailSetUnique.add(emailInput);
+//
+//							isExitSubject = Boolean.TRUE;
+//							while (isExitSubject) {
+//								Subject subjectObject = new Subject();// Creating Object For Subject
+//								System.out.println("Enter Subject Name: ");
+//								String subjectNameInput = sc.next();
+//								subjectObject.setSubjectName(subjectNameInput);
+//								historyObject.historySatck.push(subjectNameInput);
+//								subjectObject.subjectAvailable();//taking from the subject interface
+//								
+//
+//								Mark markObject = new Mark(); // Creating Object For Mark
+//								boolean checkMark = true;
+//								while(checkMark) {
+//									try {
+//								System.out.println("Enter Mark: ");
+//								String markInput = sc.next();
+//								Integer studentMarkInput = Integer.parseInt(markInput);
+//								checkMark=false;
+//								
+//
+//								markObject.setSubjectMark(studentMarkInput);
+//								historyObject.historySatck.push(markInput);
+//								schoolList.add(schoolInput);
+//								
+//								subjectObject.marksArryList.add(markObject);
+//								checkMark= false;
+//									}
+//									catch(Exception e) {
+//										System.out.println("The Error is " + e.getMessage());
+//										continue;
+//									} 
 //								}
-//								catch(Exception e) {
-//									System.out.println("The Error is " + e.getMessage());
-//									continue;
-//								} 
+//								studentObject.listSubject.add(subjectObject);
+//
+//								System.out.println("Press 1 To Add New Subject , Press 0 To Go Out Of The Option");
+//								int exitSubjectInput = sc.nextInt();
+//								String exitUserSubjectInput = Integer.toString(exitSubjectInput);
+//								historyObject.historySatck.push(exitUserSubjectInput);
+//								if (exitSubjectInput == 0) {
+//
+//									isExitSubject = false;
+//								}
 //							}
-
-							Student studentObject = new Student();// student object
-							
-							boolean studentID = true;
-
-							System.out.println("Enter Student ID:");
-							int enrolNumber = sc.nextInt();
-							String enrolmentNumber = Integer.toString(enrolNumber);
-							historySatck.push(enrolmentNumber);
-							studentObject.setEnrolID(enrolNumber);
-
-							System.out.println("Enter Student Name:");
-							String studentNameInput = sc.next();
-							historySatck.push(studentNameInput);
-							studentObject.setstudentName(studentNameInput);
-							schoolObject.studentList.add(studentObject);
-							studentObject.isWorking(); // taking from the student interface
-							
-//							System.out.println("Enter Student last name:");
-//							String studentLastName = sc.next();
-//							historySatck.push(studentLastName);
-//							studentObject.last
-							
-							
-
-							System.out.println("Enter Student Email:");
-							String emailInput = sc.next();
-							historySatck.push(emailInput);
-							studentObject.setStudentEmail(emailInput);
-							schoolObject.studentList.add(studentObject);
-							listDuplicateEmail.add(emailInput);
-							hashEmailSetUnique.add(emailInput);
-
-							isExitSubject = Boolean.TRUE;
-							while (isExitSubject) {
-								Subject subjectObject = new Subject();// Creating Object For Subject
-								System.out.println("Enter Subject Name: ");
-								String subjectNameInput = sc.next();
-								subjectObject.setSubjectName(subjectNameInput);
-								historySatck.push(subjectNameInput);
-								subjectObject.subjectAvailable();//taking from the subject interface
-								
-
-								Mark markObject = new Mark(); // Creating Object For Mark
-								boolean checkMark = true;
-								while(checkMark) {
-									try {
-								System.out.println("Enter Mark: ");
-								String markInput = sc.next();
-								Integer studentMarkInput = Integer.parseInt(markInput);
-								checkMark=false;
-								
-
-								markObject.setSubjectMark(studentMarkInput);
-								historySatck.push(markInput);
-								schoolList.add(schoolInput);
-								
-								subjectObject.marksArryList.add(markObject);
-								checkMark= false;
-									}
-									catch(Exception e) {
-										System.out.println("The Error is " + e.getMessage());
-										continue;
-									} 
-								}
-								studentObject.listSubject.add(subjectObject);
-
-								System.out.println("Press 1 To Add New Subject , Press 0 To Go Out Of The Option");
-								int exitSubjectInput = sc.nextInt();
-								String exitUserSubjectInput = Integer.toString(exitSubjectInput);
-								historySatck.push(exitUserSubjectInput);
-								if (exitSubjectInput == 0) {
-
-									isExitSubject = false;
-								}
-							}
-
-							schoolObject.studentList.add(studentObject);
-							System.out.println("Press 1 To Add New Student , Press 0 To Go Out Of The Option");
-							int exitStudentInput = sc.nextInt();
-							String exitUserStudentInput = Integer.toString(exitStudentInput);
-							historySatck.push(exitUserStudentInput);
-							
-							if (exitStudentInput == 0) {
-								isExitMain = false;
-								// mainMenueFunction();
-							}
-							 mainMenueFunction();
-
-						}
-							try {
-								fOut.writeObject(historySatck);
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-//							 FileInputStream file = new FileInputStream(fileName);
-//						        ObjectInputStream on = new ObjectInputStream(file);
-//						        return (Link) on.readObject();
+//
+//							schoolObject.studentList.add(studentObject);
+//							System.out.println("Press 1 To Add New Student , Press 0 To Go Out Of The Option");
+//							int exitStudentInput = sc.nextInt();
+//							String exitUserStudentInput = Integer.toString(exitStudentInput);
+//							historyObject.historySatck.push(exitUserStudentInput);
+//							
+//							if (exitStudentInput == 0) {
+//								isExitMain = false;
+//								// mainMenueFunction();
+//							}
+//							 mainMenueFunction();
+//
+//						}
+//							try {
+//								fOut.writeObject(historySatck);
+//							} catch (IOException e) {
+//								// TODO Auto-generated catch block
+//								e.printStackTrace();
+//							}
+////							 FileInputStream file = new FileInputStream(fileName);
+////						        ObjectInputStream on = new ObjectInputStream(file);
+////						        return (Link) on.readObject();
 						break;
 					case 2:
 						// Printing elements of HashSet object
@@ -389,29 +394,32 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 
 						break;
 					case 5:
+						History HistoryObject2 = new History(); // Creating object for ProblemSolving class
+						HistoryObject2.history();
+						mainMenueFunction();
 
-						System.out.println("***** The history is ******");
-						// printing history
-						// {@code true} if and only if this stack contains
-						// no items; {@code false} otherwise.
-					while (historySatck.empty() == false) {
-						System.out.println(historySatck.pop());
-							try {
-							fOut.writeObject(historySatck.toString());
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-							e1.printStackTrace();
-							}
-					}
-					try {
-						        ObjectInputStream on = new ObjectInputStream(new FileInputStream("historyNew.txt"));
-						        School schoolVariable2 = (School) on.readObject();
-						      System.out.println(schoolVariable2.schoolName);
-						      on.close();
-;						}
-					catch(Exception e1) {
-						System.out.println(e1);
-					}
+//						System.out.println("***** The history is ******");
+//						// printing history
+//						// {@code true} if and only if this stack contains
+//						// no items; {@code false} otherwise.
+//					while (historySatck.empty() == false) {
+//						System.out.println(historySatck.pop());
+//							try {
+//							fOut.writeObject(historySatck.toString());
+//							} catch (IOException e1) {
+//								// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//							}
+//					}
+//					try {
+//						        ObjectInputStream on = new ObjectInputStream(new FileInputStream("historyNew.txt"));
+//						        School schoolVariable2 = (School) on.readObject();
+//						      System.out.println(schoolVariable2.schoolName);
+//						      on.close();
+//;						}
+//					catch(Exception e1) {
+//						System.out.println(e1);
+//					}
 						
 						
 //						try {
@@ -429,151 +437,158 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 						break;
 						
 					case 6:
+						ProblemSolving problemSolvingObject = new ProblemSolving(); // Creating object for ProblemSolving class
+						problemSolvingObject.problemSolving();
+						mainMenueFunction();
+					
 
-						do {
-							System.out.println("\n***************************");
-							System.out.println("\n******* Welcome To The Coding Problem Menue*******");
-							System.out.println("Select One Of The Following Option To Continue...");
-							System.out.println("1. Find The Factotrial");
-							System.out.println("2. Back To The Main Menu");
-							System.out.println("3. Find The Fibonacci");
-							int codingProblemUserInput = sc.nextInt();
-							switch (codingProblemUserInput) {
-
-							case 1:
-								// Factorial
-								System.out.println("Enter A Number To Find Its  Factorial : ");
-								int userFactorialNuumber = sc.nextInt();
-								BigInteger factorial = calculationOfFactorial(userFactorialNuumber);
-
-								System.out.println(
-										"The Factorial of " + " " + userFactorialNuumber + " " + "is : " + factorial);
-
-								// calFactorialFunction
-
-//								int fact = 1;
-//								int i = 1;
-//								System.out.println("Enter a number to find its  factorial : ");
-//								int userNum = sc.nextInt();
-//								// counting the factorial using while loop
-//								while (i <= userNum) {
-//									fact = fact * i;
-//									i++; // increment i by 1
+////						do {
+////							System.out.println("\n***************************");
+////							System.out.println("\n******* Welcome To The Coding Problem Menue*******");
+////							System.out.println("Select One Of The Following Option To Continue...");
+////							System.out.println("1. Find The Factotrial");
+////							System.out.println("2. Back To The Main Menu");
+////							System.out.println("3. Find The Fibonacci");
+////							int codingProblemUserInput = sc.nextInt();
+////							switch (codingProblemUserInput) {
+////
+////							case 1:
+////								// Factorial
+////								System.out.println("Enter A Number To Find Its  Factorial : ");
+////								int userFactorialNuumber = sc.nextInt();
+////								BigInteger factorial = calculationOfFactorial(userFactorialNuumber);
+////
+////								System.out.println(
+////										"The Factorial of " + " " + userFactorialNuumber + " " + "is : " + factorial);
+////
+////								// calFactorialFunction
+////
+//////								int fact = 1;
+//////								int i = 1;
+//////								System.out.println("Enter a number to find its  factorial : ");
+//////								int userNum = sc.nextInt();
+//////								// counting the factorial using while loop
+//////								while (i <= userNum) {
+//////									fact = fact * i;
+//////									i++; // increment i by 1
+//////								}
+//////
+//////								// printing the result
+//////								System.out.println("\nFactorial of " + userNum + " is: " + fact);
+//								break;
+////							case 3:
+//								// Fibonacci
+////								/* It is a sequence of numbers that starts with 0 and then 1 
+////								   and then each number after that is the sum 
+////								   of the previous 2 numbers */
+//								System.out.println("Enter The Fibonacci Number You Want To Find:");
+//								int number = sc.nextInt();
+//
+//								fibonacciArrayStore = new long[number + 1]; // example to claculate 3 fibonnaci so index
+//																			// should be 4
+//								for (int i = 0; i <= number; i++) {
+//									System.out.print(fibonacciFunction(i) + " ");
 //								}
 //
-//								// printing the result
-//								System.out.println("\nFactorial of " + userNum + " is: " + fact);
-								break;
-							case 3:
-								// Fibonacci
-//								/* It is a sequence of numbers that starts with 0 and then 1 
-//								   and then each number after that is the sum 
-//								   of the previous 2 numbers */
-								System.out.println("Enter The Fibonacci Number You Want To Find:");
-								int number = sc.nextInt();
-
-								fibonacciArrayStore = new long[number + 1]; // example to claculate 3 fibonnaci so index
-																			// should be 4
-								for (int i = 0; i <= number; i++) {
-									System.out.print(fibonacciFunction(i) + " ");
-								}
-
-//							System.out.println("enter the length of the Fibonacci:");
-//								int userFibonaccitLenght = sc.nextInt();
-//								
-//								int firstNumber = 0;
-//								int secondNumber = 1;
-//								int thirdNumber;
-//								
-//								System.out.println(firstNumber+ " " + secondNumber );
-//								
-//								
-//								for (int i = 2; i < userFibonaccitLenght; i++) {
-//									thirdNumber = firstNumber + secondNumber;
-//									if(thirdNumber<=100) {
-//										System.out.println(thirdNumber + " ");
-//										firstNumber = secondNumber;
-//										secondNumber = thirdNumber;
-//									}
-//								}
-
-								break;
-							case 2:
-								isExitSubMenue = false;
-								mainMenueFunction();
-
-								break;
-							}
-						} while (isExitSubMenue);
+////							System.out.println("enter the length of the Fibonacci:");
+////								int userFibonaccitLenght = sc.nextInt();
+////								
+////								int firstNumber = 0;
+////								int secondNumber = 1;
+////								int thirdNumber;
+////								
+////								System.out.println(firstNumber+ " " + secondNumber );
+////								
+////								
+////								for (int i = 2; i < userFibonaccitLenght; i++) {
+////									thirdNumber = firstNumber + secondNumber;
+////									if(thirdNumber<=100) {
+////										System.out.println(thirdNumber + " ");
+////										firstNumber = secondNumber;
+////										secondNumber = thirdNumber;
+////									}
+////								}
+//
+//								break;
+//							case 2:
+//								isExitSubMenue = false;
+//								mainMenueFunction();
+//
+//								break;
+//							}
+//						} while (isExitSubMenue);
 						break;
 
 					case 7:
-						Map<String, Double> currencyMap = new HashMap<>();
-						Map<String, Map<String, Double>> secondCurrencyMap = new HashMap<>();
-
-						String currencyName = "Saudi Riyal";
-
-						System.out.println("Enter student name who want to convert:");
-
-						String studentConversionName = sc.next();
-						historySatck.push(studentConversionName);
-
-						System.out.println("Choose Currency you want to convert:\n" + "1. Saudi Riyal \n"
-								+ " 2. United Arab Emirates Dirham \n" + " 3. Kuwaiti Dinar \n" + " 4. Qatari Rial ");
-
-						currency = sc.nextInt();
-						String currencyNew = Integer.toString(currency);
-						historySatck.push(currencyNew);
-
-						System.out.println("Enter Fees Amount");
-
-						feesAmount = sc.nextDouble();
-						String feesAmountNew = Double.toString(feesAmount);
-						historySatck.push(feesAmountNew);
-
-						if (currency == 1) {
-
-							amountCalulation = feesAmount * 9.76;
-							// Math.round(amountCal);
-
-						}
-
-						else if (currency == 2) {
-
-							amountCalulation = feesAmount * 0.10;
-//					Math.round(amountCal);
-							currencyName = "AED";
-
-						}
-
-						else if (currency == 3) {
-
-							amountCalulation = feesAmount * 1.24;
-//					Math.round(amountCal);
-							currencyName = "KWD";
-//					System.out.printf("%.2f", amountCal);
-
-						} else if (currency == 4) {
-
-							amountCalulation = feesAmount * 0.11;
-//					Math.round(amountCal);
-							currencyName = "QAR";
-//					System.out.printf("%.2f", amountCal);
-
-						}
-//				System.out.printf("%.2f", comparisionMap);
-
-						currencyMap.put(currencyName, amountCalulation);
-						secondCurrencyMap.put(studentConversionName, currencyMap);
-//	    		System.out.println( currencyMap);
-
-						// find the closest int for these floats
-						// System.out.println(Math.round(comparisionMap));
-						System.out.println(secondCurrencyMap);
+						Currency currencyObject = new Currency(); // Creating object for currency class
+						currencyObject.currecny();
 						mainMenueFunction();
-
-						// String formattedString = String.format("%.2f", comparisionMap);
-//			System.out.println("%.2f",formattedString);
+//						Map<String, Double> currencyMap = new HashMap<>();
+//						Map<String, Map<String, Double>> secondCurrencyMap = new HashMap<>();
+//
+//						String currencyName = "Saudi Riyal";
+//
+//						System.out.println("Enter student name who want to convert:");
+//
+//						String studentConversionName = sc.next();
+//						historySatck.push(studentConversionName);
+//
+//						System.out.println("Choose Currency you want to convert:\n" + "1. Saudi Riyal \n"
+//								+ " 2. United Arab Emirates Dirham \n" + " 3. Kuwaiti Dinar \n" + " 4. Qatari Rial ");
+//
+//						currency = sc.nextInt();
+//						String currencyNew = Integer.toString(currency);
+//						historySatck.push(currencyNew);
+//
+//						System.out.println("Enter Fees Amount");
+//
+//						feesAmount = sc.nextDouble();
+//						String feesAmountNew = Double.toString(feesAmount);
+//						historySatck.push(feesAmountNew);
+//
+//						if (currency == 1) {
+//
+//							amountCalulation = feesAmount * 9.76;
+//							// Math.round(amountCal);
+//
+//						}
+//
+//						else if (currency == 2) {
+//
+//							amountCalulation = feesAmount * 0.10;
+////					Math.round(amountCal);
+//							currencyName = "AED";
+//
+//						}
+//
+//						else if (currency == 3) {
+//
+//							amountCalulation = feesAmount * 1.24;
+////					Math.round(amountCal);
+//							currencyName = "KWD";
+////					System.out.printf("%.2f", amountCal);
+//
+//						} else if (currency == 4) {
+//
+//							amountCalulation = feesAmount * 0.11;
+////					Math.round(amountCal);
+//							currencyName = "QAR";
+////					System.out.printf("%.2f", amountCal);
+//
+//						}
+////				System.out.printf("%.2f", comparisionMap);
+//
+//						currencyMap.put(currencyName, amountCalulation);
+//						secondCurrencyMap.put(studentConversionName, currencyMap);
+////	    		System.out.println( currencyMap);
+//
+//						// find the closest int for these floats
+//						// System.out.println(Math.round(comparisionMap));
+//						System.out.println(secondCurrencyMap);
+//						mainMenueFunction();
+//
+//						// String formattedString = String.format("%.2f", comparisionMap);
+////			System.out.println("%.2f",formattedString);
 						break;
 
 					case 8:
