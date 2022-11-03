@@ -1,6 +1,7 @@
 package Project1;
+
 //import java package 
-import java.io.FilterOutputStream; 
+import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.*;
@@ -92,20 +93,27 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 //	}
 
 	public static void main(String[] args) {
+		
 		//using Stack and push data to file
 		 FileOutputStream fileOut;
 		 ObjectOutputStream fOut = null;
+
 		 try {
-			 fileOut = new FileOutputStream("C:\\Users\\user020\\Desktop\\TMain\\Solo_Project_School_System-M\\Seroutput.txt");
+			 fileOut = new FileOutputStream("C:\\Users\\user020\\Desktop\\TMain\\Solo_Project_School_System-M\\result.txt");
 			 fOut = new ObjectOutputStream(fileOut);
+//			 FileInputStream fileIn = new FileInputStream("C:\\Users\\user020\\Desktop\\TMain\\Solo_Project_School_System-M\\result.txt\");
+//		        ObjectInputStream on = new ObjectInputStream(fileIn);
+//		        return (Link) on.readObject()
 			 
 		 }
 		 catch (IOException e1) {
 			 e1.printStackTrace();
 		 } // end of using stack and  push data into file
 		 
+		
+				 
 		Scanner sc = new Scanner(System.in);
-		Stack<String> historySatck = new Stack<>();
+    	Stack<String> historySatck = new Stack<>();
 		Set<String> hashEmailSet = new HashSet<String>();
 		Set<String> hashEmailSetUnique = new HashSet<String>();
 		List<String> schoolList = new ArrayList<>();
@@ -159,19 +167,42 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 //		}
 
 		while (isExitLogiIN) {
-			System.out.print("Enter username:");// username:shirin
+			System.out.print("\n Enter username:");// username:shirin
 			username = sc.nextLine();
-			System.out.print("Enter password:");// password:ajmi
+			try {
+				if (!username.equals("shirin"))
+				{
+					throw new Exception ("Wrong Username, Please Try again.");
+				}
+			}
+			catch (Exception e) {
+				System.out.print(e.getMessage());
+				continue;
+			}
+			System.out.print(" \nEnter password:");// password:ajmi
 			password = sc.nextLine();
-			if (username.equals("shirin") && password.equals("ajmi")) {
-				System.out.println("Horray!! Login Successful.. welcome To The Main Menue!");
+			try {
+				if (!password.equals("ajmi"))
+				{
+					throw new Exception ("Wrong Password, Please Try again.");
+				}
+			}
+			catch (Exception e) {
+				System.out.print(e.getMessage());
+				continue;
+			}
+			isExitLogiIN = false;
+		}
+//			if (username.equals("shirin") && password.equals("ajmi")) {
+//				System.out.println("Horray!! Login Successful.. welcome To The Main Menue!");
 //				userPass=false;
 				//mainMenueFunction();
 
 //			userPass = false;
 
+		mainMenueFunction();
 				do {
-					mainMenueFunction();
+					
 
 					int studentMenue = sc.nextInt();
 					switch (studentMenue) {
@@ -231,15 +262,28 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 								historySatck.push(subjectNameInput);
 
 								Mark markObject = new Mark(); // Creating Object For Mark
+								boolean checkMark = true;
+								while(checkMark) {
+									try {
 								System.out.println("Enter Mark: ");
-								Integer markInput = sc.nextInt();
-								String studentMarkInput = Integer.toString(markInput);
+								String markInput = sc.next();
+								Integer studentMarkInput = Integer.parseInt(markInput);
+								checkMark=false;
+								
 
-								markObject.setSubjectMark(markInput);
-								historySatck.push(studentMarkInput);
+								markObject.setSubjectMark(studentMarkInput);
+								historySatck.push(markInput);
 								schoolList.add(schoolInput);
-								studentObject.listSubject.add(subjectObject);
+								
 								subjectObject.marksArryList.add(markObject);
+								checkMark= false;
+									}
+									catch(Exception e) {
+										System.out.println("The Error is " + e.getMessage());
+										continue;
+									} 
+								}
+								studentObject.listSubject.add(subjectObject);
 
 								System.out.println("Press 1 To Add New Subject , Press 0 To Go Out Of The Option");
 								int exitSubjectInput = sc.nextInt();
@@ -261,9 +305,18 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 								isExitMain = false;
 								// mainMenueFunction();
 							}
+							 mainMenueFunction();
 
 						}
-						// mainMenueFunction();
+							try {
+								fOut.writeObject(historySatck);
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+//							 FileInputStream file = new FileInputStream(fileName);
+//						        ObjectInputStream on = new ObjectInputStream(file);
+//						        return (Link) on.readObject();
 						break;
 					case 2:
 						// Printing elements of HashSet object
@@ -309,15 +362,24 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 						// printing history
 						// {@code true} if and only if this stack contains
 						// no items; {@code false} otherwise.
-						while (historySatck.empty() == false) {
-							System.out.println(historySatck.pop());
+					while (historySatck.empty() == false) {
+						System.out.println(historySatck.pop());
 							try {
-								fOut.writeObject(historySatck.toString());
-							} catch (IOException e) {
+							fOut.writeObject(historySatck.toString());
+							} catch (IOException e1) {
 								// TODO Auto-generated catch block
-								e.printStackTrace();
+							e1.printStackTrace();
 							}
-						}
+					}
+					try {
+						        ObjectInputStream on = new ObjectInputStream(new FileInputStream("historyNew.txt"));
+						        School schoolVariable2 = (School) on.readObject();
+						      System.out.println(schoolVariable2.schoolName);
+						      on.close();
+;						}
+					catch(Exception e1) {
+						System.out.println(e1);
+					}
 						
 						
 //						try {
@@ -485,17 +547,20 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 					case 8:
 						System.out.println("Exiting The System Bye See you Again!....");
 						System.exit(0);
+						
+						
 						break;
 					}
 
 				} while (true);
 
 			}
-			System.out.println("login  Failed Please Try Again :) ");
-
-		}
-		isExitLogiIN = false;
-
-	}
-
 }
+
+//			System.out.println("login  Failed Please Try Again :) ");
+//
+//		}isExitLogiIN=false;
+//
+//}
+//
+//}
