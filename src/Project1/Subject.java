@@ -2,10 +2,14 @@ package Project1;
 
 import java.util.*;
 
-public class Subject {
+public class Subject implements Isubject{
 
 	private String subjectName;
 	List<Mark> marksArryList = new ArrayList<>();
+	
+	public void subjectAvailable() {
+		System.out.println("\n The subject is already available");
+	}
 
 	// getter for subject name
 	public String getSubjectName() {

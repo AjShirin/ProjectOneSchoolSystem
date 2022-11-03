@@ -229,9 +229,31 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 //							{
 //								System.out.println(e);
 //							}
-							
+	
+//							while(checkMark) {
+//								try {
+//							System.out.println("Enter Mark: ");
+//							String markInput = sc.next();
+//							Integer studentMarkInput = Integer.parseInt(markInput);
+//							checkMark=false;
+//							
+//
+//							markObject.setSubjectMark(studentMarkInput);
+//							historySatck.push(markInput);
+//							schoolList.add(schoolInput);
+//							
+//							subjectObject.marksArryList.add(markObject);
+//							checkMark= false;
+//								}
+//								catch(Exception e) {
+//									System.out.println("The Error is " + e.getMessage());
+//									continue;
+//								} 
+//							}
 
 							Student studentObject = new Student();// student object
+							
+							boolean studentID = true;
 
 							System.out.println("Enter Student ID:");
 							int enrolNumber = sc.nextInt();
@@ -244,6 +266,14 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 							historySatck.push(studentNameInput);
 							studentObject.setstudentName(studentNameInput);
 							schoolObject.studentList.add(studentObject);
+							studentObject.isWorking(); // taking from the student interface
+							
+//							System.out.println("Enter Student last name:");
+//							String studentLastName = sc.next();
+//							historySatck.push(studentLastName);
+//							studentObject.last
+							
+							
 
 							System.out.println("Enter Student Email:");
 							String emailInput = sc.next();
@@ -260,6 +290,8 @@ public class School  { // Implementing the Serializtion //implements Serializabl
 								String subjectNameInput = sc.next();
 								subjectObject.setSubjectName(subjectNameInput);
 								historySatck.push(subjectNameInput);
+								subjectObject.subjectAvailable();//taking from the subject interface
+								
 
 								Mark markObject = new Mark(); // Creating Object For Mark
 								boolean checkMark = true;

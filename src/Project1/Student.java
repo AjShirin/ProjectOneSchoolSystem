@@ -2,10 +2,13 @@ package Project1;
 
 import java.util.*;
 
-public class Student {
+public class Student implements Istudent{
 	private String studentName;
 	private int enrolID;
 	private String studentEmail;
+	public void isWorking() {
+		System.out.println("\nThe student is working");
+	}
 
 	 List<Subject> listSubject=new ArrayList<>();
 
