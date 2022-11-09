@@ -14,6 +14,15 @@ public class Registeration {
 	static boolean isExitMain = true;
 	static boolean isExitSubject = true;
 	static boolean isExitSubMenue = true;
+	
+	Currency currencyObj = new Currency(); // ...
+	
+	static Set<String> hashEmailSet = new HashSet<String>(); //...
+	static Set<String> hashEmailSetUnique = new HashSet<String>();
+	static List<School> schoolList = new ArrayList<>();
+	//static List<Student> studentList = new ArrayList<>();
+	static List<String> listDuplicateEmail = new ArrayList<>();
+	//static School schoolObject = new School();
 
 	static void mainMenueFunction() {
 		System.out.println("***************************");
@@ -32,21 +41,39 @@ public class Registeration {
 
 	static void registeration() {
 			Scanner sc = new Scanner(System.in);
-			new History();
-			new HashSet<String>();
-			Set<String> hashEmailSetUnique = new HashSet<String>();
-			List<String> schoolList = new ArrayList<>();
-			List<String> listDuplicateEmail = new ArrayList<>();
-			 ObjectOutputStream fOut = null ;
+			History historyObject = new History();
+//			new History();
+//			new HashSet<String>();
+//			Set<String> hashEmailSetUnique = new HashSet<String>();
+//			List<String> schoolList = new ArrayList<>();
+//			List<String> listDuplicateEmail = new ArrayList<>();
+			 ObjectOutputStream out = null ;
+			 FileOutputStream fout = null;
+			 
+			 try {
+				 fout= new FileOutputStream("C:\\Users\\user020\\Desktop\\Eclipse\\Solo_Project_School_System-M\\result.txt");
+				 out = new ObjectOutputStream (fout);
+//					out.writeObject(historySatck);
+//					out.flush();
+//					out.close();
+					System.out.println("congratz it has been added to the file !!");
+				}
+				catch (IOException e1)
+				{
+					e1.printStackTrace();
+				}
+
+			 
 			
 			isExitMain = Boolean.TRUE;
 			while (isExitMain) {
 				School schoolObject = new School(); // Creating object for school
 				System.out.println("Enter School Name: ");
 				String schoolInput = sc.next();
-				History.historySatck.push(schoolInput);
+				historyObject.historySatck.push(schoolInput);
 
 				schoolObject.setSchoolName(schoolInput);// object chaining
+				schoolList.add(schoolObject);//...
 				
 				
 //				try {
@@ -89,14 +116,14 @@ public class Registeration {
 				int enrolNumber = sc.nextInt();
 				String enrolmentNumber = Integer.toString(enrolNumber);
 				
-				History.historySatck.push(enrolmentNumber);
+				historyObject.historySatck.push(enrolmentNumber);
 				studentObject.setEnrolID(enrolNumber);
 
 				System.out.println("Enter Student Name:");
 				String studentNameInput = sc.next();
-				History.historySatck.push(studentNameInput);
+				historyObject.historySatck.push(studentNameInput);
 				studentObject.setstudentName(studentNameInput);
-				School.studentList.add(studentObject);
+				schoolObject.studentList.add(studentObject);
 				studentObject.isWorking(); // taking from the student interface
 				
 //				System.out.println("Enter Student last name:");
@@ -108,9 +135,9 @@ public class Registeration {
 
 				System.out.println("Enter Student Email:");
 				String emailInput = sc.next();
-				History.historySatck.push(emailInput);
+				historyObject.historySatck.push(emailInput);
 				studentObject.setStudentEmail(emailInput);
-				School.studentList.add(studentObject);
+				schoolObject.studentList.add(studentObject);
 				listDuplicateEmail.add(emailInput);
 				hashEmailSetUnique.add(emailInput);
 
@@ -120,7 +147,7 @@ public class Registeration {
 					System.out.println("Enter Subject Name: ");
 					String subjectNameInput = sc.next();
 					subjectObject.setSubjectName(subjectNameInput);
-					History.historySatck.push(subjectNameInput);
+					historyObject.historySatck.push(subjectNameInput);
 					subjectObject.subjectAvailable();//taking from the subject interface
 					
 
@@ -135,8 +162,8 @@ public class Registeration {
 					
 
 					markObject.setSubjectMark(studentMarkInput);
-					History.historySatck.push(markInput);
-					schoolList.add(schoolInput);
+					historyObject.historySatck.push(markInput);
+					//subjectObject.schoolList.add(schoolInput);
 					
 					subjectObject.marksArryList.add(markObject);
 					checkMark= false;
@@ -151,18 +178,18 @@ public class Registeration {
 					System.out.println("Press 1 To Add New Subject , Press 0 To Go Out Of The Option");
 					int exitSubjectInput = sc.nextInt();
 					String exitUserSubjectInput = Integer.toString(exitSubjectInput);
-					History.historySatck.push(exitUserSubjectInput);
+					historyObject.historySatck.push(exitUserSubjectInput);
 					if (exitSubjectInput == 0) {
 
 						isExitSubject = false;
 					}
 				}
 
-				School.studentList.add(studentObject);
+				//School.studentList.add(studentObject);
 				System.out.println("Press 1 To Add New Student , Press 0 To Go Out Of The Option");
 				int exitStudentInput = sc.nextInt();
 				String exitUserStudentInput = Integer.toString(exitStudentInput);
-				History.historySatck.push(exitUserStudentInput);
+				historyObject.historySatck.push(exitUserStudentInput);
 				
 				if (exitStudentInput == 0) {
 					isExitMain = false;
@@ -171,14 +198,23 @@ public class Registeration {
 				 mainMenueFunction();
 
 			}
-//				try {
-//					fOut.writeObject(History.historySatck.toString());
-//				} catch (IOException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
 	 }
+public void showReport() {
+//	System.out.println("_____ ++++++Report:++++++_____");// for each method in array list
+	for (School schoolVariable : schoolList){
+		System.out.println(schoolVariable.schoolName);
+		for (Student studentVariable : schoolVariable.studentList) {
+			System.out.println("Student Name :" + studentVariable.getStudentName() + "\n The Email is :"
+					+ studentVariable.getStudentEmail());
+			for (Subject subjectVariable : studentVariable.listSubject) {
+				for (Mark markVariable : subjectVariable.getMarksArryList()) {
+					System.out.println("Student mark of " + subjectVariable.getSubjectName() + ":" + " "
+							+ markVariable.getSubjectMark());
+
+				}
+			}
+		}
+	}
+	
 }
-//				 FileInputStream file = new FileInputStream(fileName);
-//			        ObjectInputStream on = new ObjectInputStream(file);
-//			        return (Link) on.readObject();
+}
