@@ -1,48 +1,42 @@
 package RandomUserAPI;
 
-public class Location {
+import java.io.Serializable;
+
+public class Location implements Serializable{
 	private String city;
 	private String state;
 	private String country;
-	private int postcode;
+	private String postcode;
 
-	
-	private String getCity() {
+	public String getCity() {
 		return city;
 	}
 
-	
-	private void setCity(String city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
-	
-	private String getState() {
+	public String getState() {
 		return state;
 	}
 
-	
-	private void setState(String state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 
-	
-	private String getCountry() {
+	public String getCountry() {
 		return country;
 	}
 
-	
-	private void setCountry(String country) {
+	public void setCountry(String country) {
 		this.country = country;
 	}
 
-	
-	private int getPostcode() {
+	public String getPostcode() {
 		return postcode;
 	}
 
-	
-	private void setPostcode(int postcode) {
+	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
 

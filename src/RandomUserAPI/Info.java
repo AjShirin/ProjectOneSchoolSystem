@@ -1,49 +1,62 @@
 package RandomUserAPI;
 
-public class Info {
+import java.io.Serializable;
+
+public class Info implements Serializable{
 	private String seed;
-	private String result;
-	private String page;
-	private float version;
+	private int result;
+	private int page;
+	private String version;
 
 	
-	private String getSeed() {
+
+	public String getSeed() {
 		return seed;
 	}
 
-	
-	private void setSeed(String seed) {
+
+
+	public void setSeed(String seed) {
 		this.seed = seed;
 	}
 
-	
-	private String getResult() {
+
+
+	public int getResult() {
 		return result;
 	}
 
-	
-	private void setResult(String result) {
+
+
+	public void setResult(int result) {
 		this.result = result;
 	}
 
-	
-	private String getPage() {
+
+
+	public int getPage() {
 		return page;
 	}
 
-	
-	private void setPage(String page) {
+
+
+	public void setPage(int page) {
 		this.page = page;
 	}
 
-	
-	private float getVersion() {
+
+
+	public String getVersion() {
 		return version;
 	}
-	
-	private void setVersion(float version) {
+
+
+
+	public void setVersion(String version) {
 		this.version = version;
 	}
+
+
 
 	public static void main(String[] args) {
 		

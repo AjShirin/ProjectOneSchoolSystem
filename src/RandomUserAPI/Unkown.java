@@ -1,36 +1,31 @@
 package RandomUserAPI;
+import java.io.Serializable;
+import java.util.*;
 
 public class Unkown {
-	private String result;
-	private String info;
+	private Info info;
 	
-
+	private List<Result> results;
 	
-	
-	private String getResult() {
-		return result;
-	}
-
-
-
-	private void setResult(String result) {
-		this.result = result;
-	}
-
-
-
-	
-	private String getInfo() {
+	public Info getInfo() {
 		return info;
 	}
 
 
-
-	
-	private void setInfo(String info) {
+	public void setInfo(Info info) {
 		this.info = info;
 	}
 
+
+	public List<Result> getResults() {
+		return results;
+	}
+
+
+
+	public void setResults(List<Result> results) {
+		this.results = results;
+	}
 
 
 	public static void main(String[] args) {

@@ -1,28 +1,31 @@
 package RandomUserAPI;
 
-public class Id {
+import java.io.Serializable;
+
+public class Id implements Serializable{
 	private String name;
 	private String value;
 
 
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 
-	
-	private void setName(String name) {
+
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	
-	private String getValue() {
+
+	public String getValue() {
 		return value;
 	}
 
-	
-	private void setValue(String value) {
+
+	public void setValue(String value) {
 		this.value = value;
 	}
+
 
 	public static void main(String[] args) {
 		

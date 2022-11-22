@@ -1,29 +1,31 @@
 package RandomUserAPI;
 
-public class Coordinates {
+import java.io.Serializable;
+
+public class Coordinates implements Serializable {
 	private String latitude;
-	private float longitude;
+	private String longitude;
 
 	
-	private String getLatitude() {
+	public String getLatitude() {
 		return latitude;
 	}
 
-	
-	private void setLatitude(String latitude) {
+
+	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
 
-	
-	private float getLongitude() {
+
+	public String getLongitude() {
 		return longitude;
 	}
 
-	
 
-	private void setLongitude(float longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
+
 
 	public static void main(String[] args) {
 		

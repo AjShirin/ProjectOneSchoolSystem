@@ -1,11 +1,15 @@
 package RandomUserAPI;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+
+import com.google.gson.Gson;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class API {
+public class API implements Serializable {
 		public static void main(String[] args) {
 			HttpRequest request = HttpRequest.newBuilder()
 					.uri(URI.create("https://randomuser.me/api/"))
@@ -21,4 +25,5 @@ public class API {
 			}
 			System.out.println(response.body());
 		}
+
 	}

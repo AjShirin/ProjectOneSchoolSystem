@@ -1,28 +1,31 @@
 package RandomUserAPI;
 
-public class Registered {
+import java.io.Serializable;
+
+public class Registered implements Serializable{
 	private String date;
 	private int age;
 
-	
-	private String getDate() {
+
+	public String getDate() {
 		return date;
 	}
 
-	
-	private void setDate(String date) {
+
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	
-	private int getAge() {
+
+	public int getAge() {
 		return age;
 	}
 
-	
-	private void setAge(int age) {
+
+	public void setAge(int age) {
 		this.age = age;
 	}
+
 
 	public static void main(String[] args) {
 		

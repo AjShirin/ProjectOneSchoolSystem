@@ -1,36 +1,26 @@
 package RandomUserAPI;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Dob {
-	private Date date;
+public class Dob implements Serializable {
+	private String date;
 	private int age;
 
-	 
-	
-	private Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-
-
-	private void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-
-
-	private int getAge() {
+	public int getAge() {
 		return age;
 	}
 
-
-
-	private void setAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
-
-
 
 	public static void main(String[] args) {
 		

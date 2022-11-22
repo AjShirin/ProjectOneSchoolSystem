@@ -1,39 +1,42 @@
 package RandomUserAPI;
 
-public class Picture {
+import java.io.Serializable;
+
+public class Picture implements Serializable{
 	private String large;
 	private String medium;
 	private String thumbnail;
 
 	
-	private String getLarge() {
+	public String getLarge() {
 		return large;
 	}
 
-	
-	private void setLarge(String large) {
+
+	public void setLarge(String large) {
 		this.large = large;
 	}
 
-	
-	private String getMedium() {
+
+	public String getMedium() {
 		return medium;
 	}
 
-	
-	private void setMedium(String medium) {
+
+	public void setMedium(String medium) {
 		this.medium = medium;
 	}
 
-	
-	private String getThumbnail() {
+
+	public String getThumbnail() {
 		return thumbnail;
 	}
 
-	
-	private void setThumbnail(String thumbnail) {
+
+	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
 	}
+
 
 	public static void main(String[] args) {
 		

@@ -1,6 +1,8 @@
 package RandomUserAPI;
 
-public class Login {
+import java.io.Serializable;
+
+public class Login implements Serializable{
 	private String uuid;
 	private String username;
 	private String password;
@@ -10,74 +12,105 @@ public class Login {
 	private String sha256;
 
 	
-	private String getUuid() {
+	
+
+	public String getUuid() {
 		return uuid;
 	}
 
-	
-	private void setUuid(String uuid) {
+
+
+
+	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
 
-	
-	private String getUsername() {
+
+
+
+	public String getUsername() {
 		return username;
 	}
 
-	
-	private void setUsername(String username) {
+
+
+
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
-	
-	private String getPassword() {
+
+
+
+	public String getPassword() {
 		return password;
 	}
 
-	
-	private void setPassword(String password) {
+
+
+
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	
-	private String getSalt() {
+
+
+
+	public String getSalt() {
 		return salt;
 	}
 
-	
-	private void setSalt(String salt) {
+
+
+
+	public void setSalt(String salt) {
 		this.salt = salt;
 	}
 
-	
-	private String getMd5() {
+
+
+
+	public String getMd5() {
 		return md5;
 	}
 
-	
-	private void setMd5(String md5) {
+
+
+
+	public void setMd5(String md5) {
 		this.md5 = md5;
 	}
 
-	
-	private String getSha1() {
+
+
+
+	public String getSha1() {
 		return sha1;
 	}
 
-	
-	private void setSha1(String sha1) {
+
+
+
+	public void setSha1(String sha1) {
 		this.sha1 = sha1;
 	}
 
-	
-	private String getSha256() {
+
+
+
+	public String getSha256() {
 		return sha256;
 	}
 
-	
-	private void setSha256(String sha256) {
+
+
+
+	public void setSha256(String sha256) {
 		this.sha256 = sha256;
 	}
+
+
+
 
 	public static void main(String[] args) {
 		

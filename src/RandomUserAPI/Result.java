@@ -1,78 +1,123 @@
 package RandomUserAPI;
 
-public class Result {
+import java.io.Serializable;
+
+public class Result implements Serializable{
 	private String gender;
 	private String email;
 	private String phone;
 	private String cell;
 	private String nat;
 	
-	Coordinates coordinatesObject;
-	Dob dobObject;
-	Id IdObject;
-	Info infoObject;
-	Location locationObject;
-	Login loginObject;
-	Name nameObject;
-	Picture pictureObject;
-	Registered regosterObject;
-	Result resultObject;
-	Street streetObject;
-	Timezone timezoneObject;
-	Unkown unknownObject;
-
+	private Coordinates coordinates;
+	private Dob dob;
+	private Id IdO;
+	private Info info;
+	private Location location;
+	private Login login;
+	private Name name;
+	private Picture picture;
+	private Registered regoster;
+	private Street street;
+	private Timezone timezone;
 	
-	private String getGender() {
+	
+	public String getGender() {
 		return gender;
 	}
-
-	
-	private void setGender(String gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
-	
-	private String getEmail() {
+	public String getEmail() {
 		return email;
 	}
-
-	
-	private void setEmail(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	
-	private String getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-
-	
-	private void setPhone(String phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
-	
-	private String getCell() {
+	public String getCell() {
 		return cell;
 	}
-
-	
-	private void setCell(String cell) {
+	public void setCell(String cell) {
 		this.cell = cell;
 	}
-
-	
-	private String getNat() {
+	public String getNat() {
 		return nat;
 	}
-
-	private void setNat(String nat) {
+	public void setNat(String nat) {
 		this.nat = nat;
 	}
-
-	public static void main(String[] args) {
-		
-
+	public Coordinates getCoordinates() {
+		return coordinates;
+	}
+	public void setCoordinates(Coordinates coordinates) {
+		this.coordinates = coordinates;
+	}
+	public Dob getDob() {
+		return dob;
+	}
+	public void setDob(Dob dob) {
+		this.dob = dob;
+	}
+	public Id getIdO() {
+		return IdO;
+	}
+	public void setIdO(Id idO) {
+		IdO = idO;
+	}
+	public Info getInfo() {
+		return info;
+	}
+	public void setInfo(Info info) {
+		this.info = info;
+	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	public Login getLogin() {
+		return login;
+	}
+	public void setLogin(Login login) {
+		this.login = login;
+	}
+	public Name getName() {
+		return name;
+	}
+	public void setName(Name name) {
+		this.name = name;
+	}
+	public Picture getPicture() {
+		return picture;
+	}
+	public void setPicture(Picture picture) {
+		this.picture = picture;
+	}
+	public Registered getRegoster() {
+		return regoster;
+	}
+	public void setRegoster(Registered regoster) {
+		this.regoster = regoster;
+	}
+	public Street getStreet() {
+		return street;
+	}
+	public void setStreet(Street street) {
+		this.street = street;
+	}
+	public Timezone getTimezone() {
+		return timezone;
+	}
+	public void setTimezone(Timezone timezone) {
+		this.timezone = timezone;
 	}
 
 }
+	
