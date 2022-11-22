@@ -52,7 +52,7 @@ public class School { // Implementing the Serializtion //implements Serializable
 		System.out.println("4. Display Report");
 		System.out.println("5. Show History");
 		System.out.println("6. Coding problem ");
-		System.out.println("7. Currency Converotr To OMR ");
+		System.out.println("7. Currency Convertor To OMR ");
 		System.out.println("8. Exit the System");
 
 	}

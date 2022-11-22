@@ -38,7 +38,6 @@ public class Registeration {
 
 	}
 	
-
 	static void registeration() {
 			Scanner sc = new Scanner(System.in);
 			History historyObject = new History();
