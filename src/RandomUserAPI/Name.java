@@ -4,50 +4,27 @@ import java.io.Serializable;
 
 public class Name implements Serializable{
 	private String title;
-	private String firstName;
-	private String lastName;
-
-	
+	private String first;
+	private String last;
 	
 	public String getTitle() {
 		return title;
 	}
-
-
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-
-
-	public String getFirstName() {
-		return firstName;
+	public String getFirst() {
+		return first;
+	}
+	public void setFirst(String first) {
+		this.first = first;
+	}
+	public String getLast() {
+		return last;
+	}
+	public void setLast(String last) {
+		this.last = last;
 	}
 
-
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-
-
-	public String getLastName() {
-		return lastName;
-	}
-
-
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-
-
-	public static void main(String[] args) {
-		
-
-	}
-
+	
 }

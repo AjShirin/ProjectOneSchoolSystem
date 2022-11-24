@@ -1,0 +1,93 @@
+At first the random user api website (https://randomuser.me/) was used to fetch the information of it, 
+to do this the JSON file was converted into Java classes where for each object in the JSON there is a seperate class
+and for the list there is an array list. 
+basically, the 1st class  "Name" class where inside it is the following properties, and all of their types are String:
+1. String title;
+2.  String first;
+3.  String last;
+
+The 2nd class is "Location"where inside it is the following properties and all of their data type is string and all of them has getters and settrs:
+1. String city;
+2. String state;
+3. String country;
+4. String postcode;
+
+The 3rd class is "street" with the following properties and data types and all of their getters and setters :
+1.  int number;
+2.  String name;
+
+The 4th class is "Coordinates" with all of their data types being string and all of their properties having getters and setters:
+1. String latitude;
+2. String longitude;
+
+The 5th class is "Timezone" with all of their data types being string and all of their properties having getters and setters:
+1. String offset;
+2. String description;
+
+The 6th class is "login" with all of their data types being string and all of their properties having getters and setters:
+
+1. String uuid;
+2. String username;
+3. String password;
+4. String salt;
+5. String md5;
+6. String sha1;
+7.String sha256;
+
+The 7th class is "dob" with the following properties and data types, all of the properties has getters and setters:
+1. String date;
+2.int age;
+
+The 8th class is "registered" with the following properties and data types, all of the properties has getters and setters:
+1. String date;
+2. int age;
+
+The 9th class is "id" with all their properties being String and the following properties with their getters and setters:
+1. String name;
+2. String value;
+
+The 10th class is "picture" with all their properties being String and the following properties with their getters and setters:
+1. String large;
+2. String medium;
+3. String thumbnail;
+
+The 11th class is the "info" class with the following poperties and data types and with their getters and setter:
+1. String seed;
+2. int results;
+3. int page;
+4.String version;
+
+The "results" class is the main class and it is a list where inside it is the following properties amd data type with their getters and setters:
+1. String gender;
+2.  String email;
+3.  String phone;
+4.  String cell;
+5.  String nat;
+
+6. Coordinates coordinates;
+7. Dob dob;
+8. Id IdO;
+9.  Info info;
+10.  Location location;
+11.  Login login;
+12. Name name;
+13. Picture picture;
+14. Registered regoster;
+15.  Street street;
+16.  Timezone timezone;
+
+This class has all of the objects since it is a list.
+
+The finall class which is  "Unkown" and it is the main class where inside it is the "results " array list and the "info" class with its getters and setter.
+
+After that the GSON.jar file has been downloaded to convert 
+Next the other classes such as (API, HedRequest, HttpClient , fileBodyHandler and GetRequest) was created to connect between the Internet to fetch the data,
+In the GetRequest class a new object for the GSON has been created then the "fromJson"to conert from JSON format to the string format .
+After that the main class has been added which is the "MainRun" and inside it is the function for the main menue , 
+then 5 cases has been added where the first the multiple user where it is connected with the "MultipleUser" class where 
+in the url parameter accepts only 5 values for each user. In the case2 wich is the pagination . the 3rd case is the random password generator where it is connected with the 
+"RandomPassword" , and the password is a combination of letters uppercase and lower case with the special charecters such as the 
+bracket, punctionation and etc..
+The 4th case is the seed wich is connected with the seed class. the finall case wich is 5 is the closing system
+
+	

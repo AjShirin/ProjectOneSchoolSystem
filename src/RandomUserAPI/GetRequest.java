@@ -14,7 +14,7 @@ public class GetRequest {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://randomuser.me/api/?results=5&page=3&seed=shirin&password=?password=special,upper,lower,number"))
+                .uri(URI.create("https://randomuser.me/api/?results=5&page=3&seed=shirin&password=special,upper,lower,number"))
                 .build();
 
         HttpResponse<String> response = client.send(request,
