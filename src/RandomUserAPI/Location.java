@@ -7,6 +7,10 @@ public class Location implements Serializable{
 	private String state;
 	private String country;
 	private String postcode;
+	
+	private Timezone timezone;
+	private Street street;
+	private Coordinates coordinates;
 
 	public String getCity() {
 		return city;

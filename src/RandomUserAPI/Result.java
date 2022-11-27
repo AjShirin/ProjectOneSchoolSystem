@@ -9,7 +9,7 @@ public class Result implements Serializable{
 	private String cell;
 	private String nat;
 	
-	private Coordinates coordinates;
+	
 	private Dob dob;
 	private Id IdO;
 	private Info info;
@@ -18,8 +18,8 @@ public class Result implements Serializable{
 	private Name name;
 	private Picture picture;
 	private Registered regoster;
-	private Street street;
-	private Timezone timezone;
+	
+	
 	
 	
 	public String getGender() {
@@ -52,12 +52,7 @@ public class Result implements Serializable{
 	public void setNat(String nat) {
 		this.nat = nat;
 	}
-	public Coordinates getCoordinates() {
-		return coordinates;
-	}
-	public void setCoordinates(Coordinates coordinates) {
-		this.coordinates = coordinates;
-	}
+	
 	public Dob getDob() {
 		return dob;
 	}
@@ -106,18 +101,7 @@ public class Result implements Serializable{
 	public void setRegoster(Registered regoster) {
 		this.regoster = regoster;
 	}
-	public Street getStreet() {
-		return street;
-	}
-	public void setStreet(Street street) {
-		this.street = street;
-	}
-	public Timezone getTimezone() {
-		return timezone;
-	}
-	public void setTimezone(Timezone timezone) {
-		this.timezone = timezone;
-	}
+	
 
 }
 	
