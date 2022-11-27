@@ -18,8 +18,8 @@ public class MainRun {
 		System.out.println("4. Seeding");
 		System.out.println("5. Nationalities");
 		System.out.println("6. show Include Paramter");
-		System.out.println("8. show Excluding Paramter");
-		System.out.println("7. Exit the system ");
+		System.out.println("7. show Excluding Paramter");
+		System.out.println("8. Exit the system ");
 	}
 		
 		
@@ -62,12 +62,12 @@ public class MainRun {
 				
 				break;
 				
-			case 7:
+			case 8:
 				System.out.println("Exiting The System Bye See you Again :)!....");
 				System.exit(0);
 				
 				break;
-			case 8:
+			case 7:
 				ExcludingParamter excPara = new ExcludingParamter();
 				excPara.showExcludingParamter();
 				choicesFunction();

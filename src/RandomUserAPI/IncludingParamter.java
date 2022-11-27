@@ -11,7 +11,19 @@ import com.google.gson.Gson;
 
 public class IncludingParamter {
 	public void showIncludeParamter() throws IOException, InterruptedException {
-		System.out.println("what you want to appears for user ");
+		System.out.println("what you want to appears for user from the choices:");
+		System.out.println("___________________________________");
+		System.out.println(
+				"name\r\n"
+				+ "nat\r\n"
+				+ "email\r\n"
+				+ "login\r\n"
+				+ "location\r\n"
+				+ "gender"
+				);
+		System.out.println("___________________________________");
+		
+		
 		Scanner sc = new Scanner(System.in);
 		String include = sc.next();
 
@@ -27,22 +39,32 @@ public class IncludingParamter {
 			Unkown unknownObj = GsonObject.fromJson(response.body().toString(), Unkown.class);
 			//System.out.println(response.body().formatted(null));
 			System.out.println("*************************************************");
-          if((unknownObj.getResults().get(0).getName()== null)) {
-			System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
-			System.out.println("The results is  :" + unknownObj.getInfo().getResults());
-			System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
-		    System.out.println("The 1st Name is:"+unknownObj.getResults().get(0).getName());
-		    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
-		    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
-		    System.out.println("The  Gender is:"+unknownObj.getResults().get(0).getGender());
-		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob());
-		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getNat());
+           if((unknownObj.getResults().get(0).getName()!= null)) {
+		    System.out.println("The Name is:"+unknownObj.getResults().get(0).getName().getFirst());
+           }
+         
+           
+           else  if((unknownObj.getResults().get(0).getLocation()!=null)) {
+		    	 System.out.println("The location is:"+unknownObj.getResults().get(0).getLocation().getState());
 			
-            }
-        
-            
-		
-		
+          }
+          else  if((unknownObj.getResults().get(0).getEmail()!=null)) {
+		    	 System.out.println("The email is:"+unknownObj.getResults().get(0).getEmail());
+			
+        }
+          else  if((unknownObj.getResults().get(0).getLogin()!=null)) {
+		    	 System.out.println("The login is:"+unknownObj.getResults().get(0).getLogin());
+			
+     } 
+     
+          else  if((unknownObj.getResults().get(0).getNat()!=null)) {
+  		    	 System.out.println("The nat is:"+unknownObj.getResults().get(0).getNat());
+  			
+    } 
+          else  if((unknownObj.getResults().get(0).getGender()!=null)) {
+		    	 System.out.println("The gender is:"+unknownObj.getResults().get(0).getGender());
+			
+ }
 
 		
 	}

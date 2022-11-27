@@ -82,12 +82,99 @@ The finall class which is  "Unkown" and it is the main class where inside it is 
 
 After that the GSON.jar file has been downloaded to convert 
 Next the other classes such as (API, HedRequest, HttpClient , fileBodyHandler and GetRequest) was created to connect between the Internet to fetch the data,
-In the GetRequest class a new object for the GSON has been created then the "fromJson"to conert from JSON format to the string format .
+In the GetRequest class a new object for the GSON has been created then the "fromJson"to convert from JSON format to the string format .
 After that the main class has been added which is the "MainRun" and inside it is the function for the main menue , 
 then 5 cases has been added where the first the multiple user where it is connected with the "MultipleUser" class where 
 in the url parameter accepts only 5 values for each user. In the case2 wich is the pagination . the 3rd case is the random password generator where it is connected with the 
 "RandomPassword" , and the password is a combination of letters uppercase and lower case with the special charecters such as the 
 bracket, punctionation and etc..
-The 4th case is the seed wich is connected with the seed class. the finall case wich is 5 is the closing system
+The 4th case is the seed which is connected with the seed class. the finall case wich is 5 is the closing system.
 
-	
+at last I add new class which is (nationalities ,include paramaters and exclude paramaters )Also I add this function of class
+in case in mainRun .
+
+Now I explaine include paramter class ==>
+
+	HttpRequest request = HttpRequest.newBuilder()
+					.uri(URI.create("https://randomuser.me/api/?inc="+include)).build();==>this allowed user to include any 
+                               paramter to api link
+                              At Last I add if statment for output which I dont want to appears for user which have null output
+     
+     if((unknownObj.getResults().get(0).getName()!= null)) {
+		    System.out.println("The Name is:"+unknownObj.getResults().get(0).getName().getFirst());
+           }
+         
+           
+           else  if((unknownObj.getResults().get(0).getLocation()!=null)) {
+		    	 System.out.println("The location is:"+unknownObj.getResults().get(0).getLocation().getState());
+			
+          }
+          else  if((unknownObj.getResults().get(0).getEmail()!=null)) {
+		    	 System.out.println("The email is:"+unknownObj.getResults().get(0).getEmail());
+			
+        }
+          else  if((unknownObj.getResults().get(0).getLogin()!=null)) {
+		    	 System.out.println("The login is:"+unknownObj.getResults().get(0).getLogin());
+			
+     } 
+     
+          else  if((unknownObj.getResults().get(0).getNat()!=null)) {
+  		    	 System.out.println("The nat is:"+unknownObj.getResults().get(0).getNat());
+  			
+    } 
+          else  if((unknownObj.getResults().get(0).getGender()!=null)) {
+		    	 System.out.println("The gender is:"+unknownObj.getResults().get(0).getGender());
+			
+ }
+
+
+the last class which I add 
+	exclude paramaters ====>
+             HttpRequest request = HttpRequest.newBuilder()
+					.uri(URI.create("https://randomuser.me/api/?exc="+exclude)).build();
+                            ===>this to exclude any paramter from api link for example gender 
+                         
+  and I add if statment for any variable come from api that nulll
+            if((unknownObj.getResults().get(0).getName()== null)) {
+				 System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
+					System.out.println("The results is  :" + unknownObj.getInfo().getResults());
+					System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
+				 
+				    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
+				    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
+				    System.out.println("The  Gender is:"+unknownObj.getResults().get(0).getGender());
+				    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob().getDate());
+				    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getNat());
+		           }
+		         
+		           
+		     
+		        
+		     
+		     
+		          else  if((unknownObj.getResults().get(0).getNat()==null)) {
+		        	  System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
+		  			System.out.println("The results is  :" + unknownObj.getInfo().getResults());
+		  			System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
+		  		    System.out.println("The Name is:"+unknownObj.getResults().get(0).getName().getLast());
+		  		    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
+		  		    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
+		  		    System.out.println("The  Gender is:"+unknownObj.getResults().get(0).getGender());
+		  		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob().getDate());
+		  	
+		  			
+		    } 
+		          else  if((unknownObj.getResults().get(0).getGender()==null)) {
+		        	  System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
+		  			System.out.println("The results is  :" + unknownObj.getInfo().getResults());
+		  			System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
+		  		    System.out.println("The Name is:"+unknownObj.getResults().get(0).getName().getLast());
+		  		    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
+		  		    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
+		  
+		  		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob().getDate());
+		  		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getNat());
+					
+		 }
+			
+			

@@ -32,16 +32,48 @@ public class ExcludingParamter {
 			Gson GsonObject = new Gson();
 			Unkown unknownObj = GsonObject.fromJson(response.body().toString(), Unkown.class);
 			System.out.println("*************************************************");
-            
-			System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
-			System.out.println("The results is  :" + unknownObj.getInfo().getResults());
-			System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
-		    System.out.println("The 1st Name is:"+unknownObj.getResults().get(0).getName());
-		    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
-		    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
-		    System.out.println("The  Gender is:"+unknownObj.getResults().get(0).getGender());
-		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob());
-		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getNat());
+			 if((unknownObj.getResults().get(0).getName()== null)) {
+				 System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
+					System.out.println("The results is  :" + unknownObj.getInfo().getResults());
+					System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
+				 
+				    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
+				    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
+				    System.out.println("The  Gender is:"+unknownObj.getResults().get(0).getGender());
+				    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob().getDate());
+				    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getNat());
+		           }
+		         
+		           
+		     
+		        
+		     
+		     
+		          else  if((unknownObj.getResults().get(0).getNat()==null)) {
+		        	  System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
+		  			System.out.println("The results is  :" + unknownObj.getInfo().getResults());
+		  			System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
+		  		    System.out.println("The Name is:"+unknownObj.getResults().get(0).getName().getLast());
+		  		    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
+		  		    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
+		  		    System.out.println("The  Gender is:"+unknownObj.getResults().get(0).getGender());
+		  		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob().getDate());
+		  	
+		  			
+		    } 
+		          else  if((unknownObj.getResults().get(0).getGender()==null)) {
+		        	  System.out.println("The pagination is  :" + unknownObj.getInfo().getPage());
+		  			System.out.println("The results is  :" + unknownObj.getInfo().getResults());
+		  			System.out.println("The seed is  :" + unknownObj.getInfo().getSeed());
+		  		    System.out.println("The Name is:"+unknownObj.getResults().get(0).getName().getLast());
+		  		    System.out.println("The  Email is:"+unknownObj.getResults().get(0).getEmail());
+		  		    System.out.println("The  phone is:"+unknownObj.getResults().get(0).getPhone());
+		  
+		  		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getDob().getDate());
+		  		    System.out.println("The  Dob is:"+unknownObj.getResults().get(0).getNat());
+					
+		 }
+			
 			
 			
 		
