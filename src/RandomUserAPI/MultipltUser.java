@@ -1,6 +1,10 @@
 package RandomUserAPI;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
@@ -18,14 +22,32 @@ public class MultipltUser {
 		    HttpRequest request = HttpRequest.newBuilder()
 		            .uri(URI.create("https://randomuser.me/api/?results=5"))
 		            .build();
+		 
 
 		    HttpResponse<String> response = client.send(request,
 		            HttpResponse.BodyHandlers.ofString());
-
-		   // System.out.println("The JSON is :" +response.body());
+		    
+		    String JsonR = response.body();
+		    //System.out.println("The JSON is :" +JsonR);
+		    
 		    
 		    Gson GsonObject = new Gson();
-		    Unkown unknownObj = GsonObject.fromJson(response.body().toString(),Unkown.class);
+		    //Unkown unknownObj = GsonObject.fromJson(response.body().toString(),Unkown.class);
+		    
+		    /*Creating a file of JSON and saving */
+		    try {
+		         FileWriter file = new FileWriter("JSONFileWriter.txt");
+		         file.write(JsonR.toString());
+		         file.close();
+		      } catch (IOException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+		      }
+		      System.out.println("JSON file created");
+		      
+		      /*Read Json From File*/
+		      Reader JSONReader = new BufferedReader(new FileReader("JSONFileWriter.txt"));
+		      Unkown unknownObj = GsonObject.fromJson(JSONReader,Unkown.class);
 	
 		    System.out.println("*************************************************");
 		    

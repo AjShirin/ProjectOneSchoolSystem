@@ -1,8 +1,10 @@
 package RandomUserAPI;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
+
 
 
 public class MainRun {
@@ -36,6 +38,16 @@ public class MainRun {
 				MultipltUser MultipltUserObject = new MultipltUser(); 
 				MultipltUserObject.MultipltUserFunction();
 				choicesFunction();
+//				/*Doing the file*/
+//				 try {
+//			         FileWriter file = new FileWriter("output.txt");
+//			         file.write(MultipltUserObject.toString());
+//			         file.close();
+//			      } catch (IOException e) {
+//			         // TODO Auto-generated catch block
+//			         e.printStackTrace();
+//			      }
+//			      System.out.println("JSON file created: "+MultipltUserObject);
 				break;
 				
 			case 2:
